@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+
+  <!-- Upload Logo -->
+  <h3>Upload Logo</h3>
+  <input type="file" id="logoInput">
+  <button onclick="uploadImage('logo')">Upload Logo</button>
+
+  <!-- Upload Image -->
+  <h3>Upload Image</h3>
+  <input type="file" id="imageInput">
+  <button onclick="uploadImage('gallery')">Upload Image</button>
+
+  <!-- Update Text -->
+  <h3>Update Title</h3>
+  <input type="text" id="titleInput">
+  <button onclick="updateText()">Save Title</button>
+
+  <script src="firebase-config.js"></script>
+  <script src="script.js"></script>
+ 
+</body>
+</html>

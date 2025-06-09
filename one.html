@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zinzi's Handmade Store</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .container { display: flex; flex-wrap: wrap; gap: 20px; }
+    .product {
+      width: 220px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .product img { width: 200px; height: 200px; object-fit: cover; }
+    .cart { margin-top: 40px; border-top: 2px solid black; padding-top: 20px; }
+    .cart-item { margin-bottom: 10px; }
+    button {
+      background-color: green;
+      color: white;
+      padding: 8px 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-right: 5px;
+    }
+    button:hover { background-color: darkgreen; }
+    form input {
+      padding: 5px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>stitches Store</h1>
+  <p>Select your favorite products and place your order!</p>
+
+  <!-- ✅ Admin Panel -->
+  <!--<h2>Admin Panel: Add New Product</h2>-->
+  <form id="product-form">
+    <!--<input type="text" id="name" placeholder="Product Name" required>
+    <input type="number" id="price" placeholder="Price" required>
+    <input type="url" id="image" placeholder="Image URL" required>
+    <button type="submit">Add Product</button>
+  </form>
+
+  <!-- ✅ Product List -->
+  <div class="container" id="product-list"></div>
+
+  <!-- ✅ Cart Section -->
+  <div class="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
+    <button onclick="checkout()">Order Now</button>
+    <button onclick="payWithMpesa()">Pay with M-Pesa</button>
+    <button onclick="orderViaWhatsApp()">Order via WhatsApp</button>
+  </div>
+
+  <script>
+    // ✅ Sample products
+    const products = [
+      {
+        id: 1,
+        name: 'Handmade Beaded Necklace',
+        price: 15.00,
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/African_beaded_necklace.jpg/320px-African_beaded_necklace.jpg'
+      },
+      {
+        id: 2,
+        name: 'Maasai Shuka (Traditional Cloth)',
+        price: 25.00,
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Masai_shuka.jpg/320px-Masai_shuka.jpg'
+      },
+      {
+        id: 3,
+        name: 'Woven Basket',
+        price: 18.50,
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Tonga_basket.jpg/320px-Tonga_basket.jpg'
+      },
+      {
+        id: 4,
+        name: 'Leather Sandals',
+        price: 22.00,
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Kenyan_leather_sandals.jpg/320px-Kenyan_leather_sandals.jpg'
+      }
+    ];
+
+    const cart = [];
+
+    // ✅ Display products
+    function displayProducts() {
+      const productList = document.getElementById('product-list');
+      productList.innerHTML = '';
+      products.forEach(product => {
+        productList.innerHTML += `
+          <div class="product">
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>Price: $${product.price.toFixed(2)}</p>
+            <button onclick="addToCart(${product.id})">Add to Cart</button>
+          </div>
+        `;
+      });
+    }
+
+    // ✅ Add to cart
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      cart.push(product);
+      updateCart();
+    }
+
+    // ✅ Update cart
+    function updateCart() {
+      const cartItems = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+      cartItems.innerHTML = '';
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price;
+        cartItems.innerHTML += `
+          <div class="cart-item">
+            ${item.name} - $${item.price.toFixed(2)}
+            <button onclick="removeFromCart(${index})">Remove</button>
+          </div>
+        `;
+      });
+      cartTotal.textContent = total.toFixed(2);
+    }
+
+    // ✅ Remove from cart
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    // ✅ Order now
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+      }
+      let orderSummary = cart.map(item => `- ${item.name} ($${item.price.toFixed(2)})`).join('\n');
+      alert("Thank you for your order!\n\nItems:\n" + orderSummary + `\n\nTotal: $${cart.reduce((t, p) => t + p.price, 0).toFixed(2)}`);
+      cart.length = 0;
+      updateCart();
+    }
+
+    // ✅ M-Pesa instructions
+    function payWithMpesa() {
+      const total = cart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+      alert(`
+M-Pesa Payment Instructions:
+
+1. Go to M-Pesa on your phone
+2. Select Lipa na M-Pesa > Buy Goods and Services
+3. Till Number: 123456
+4. Amount: $${total}
+5. Confirm payment, then send a screenshot to WhatsApp.
+
+Thank you!
+      `);
+    }
+
+    // ✅ WhatsApp order
+    function orderViaWhatsApp() {
+      const items = cart.map(item => `• ${item.name} ($${item.price})`).join('%0A');
+      const total = cart.reduce((t, p) => t + p.price, 0).toFixed(2);
+      const message = `Hello, I would like to order:%0A${items}%0A%0ATotal: $${total}`;
+      const phone = '254712345678'; // Replace with your WhatsApp number
+
+      window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+    }
+
+    // ✅ Admin upload product
+    document.getElementById('product-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const price = parseFloat(document.getElementById('price').value);
+      const image = document.getElementById('image').value;
+      const newProduct = {
+        id: products.length + 1,
+        name,
+        price,
+        image
+      };
+      products.push(newProduct);
+      displayProducts();
+      this.reset();
+    });
+
+    displayProducts();
+  </script>
+
+</body>
+</html>
