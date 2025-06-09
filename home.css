@@ -577,13 +577,13 @@ text-decoration: underline blue solid;
     html{
         font-size: 13px;
     }
-    .header {
+    .container {
         width: 520px;
     }
-    #header header nav a {
+    #nav {
         background-color: transparent;
     }
-    #header input + nav {
+    #nav input + nav {
         background-color: var(--bgaccent_withOpacity);
         position: absolute;
         top: 100%;
@@ -591,7 +591,7 @@ text-decoration: underline blue solid;
         width: 35%;
         border-bottom-left-radius: 10px;
     }
-    #header #searchBox {
+    #nav #searchBox {
         transform: translateY(25px);
     }
 }
@@ -600,33 +600,33 @@ text-decoration: underline blue solid;
     html{
         font-size: 14px;
     }
-    .header {
-        width: 100%;
+    .container {
+        width: 720px;
     }
-    #header header.top {
+    #nav header.top {
         padding-top: 0px;
     }
-    #header{
+    #nav{
         background-position: center center;
     }
-    #header header.top .container {
+    #nav header.top .container {
         justify-content: flex-start;
     }
-    #header header.top p {
+    #nav header.top p {
         width: fit-content;
         margin-right: 10px;
     }
-    #header .top .social {
+    #nav .top .social {
         width: fit-content;
         flex-grow: 1;
     }
-    #header header label{
+    #nav header label{
         display: none;
     }
-    #header header nav a {
+    #nav header nav a {
         border-style: none;
     }
-    #header input + nav {
+    #navinput + nav {
         display: flex;
         flex-wrap: nowrap;
         justify-content: flex-end;
@@ -635,27 +635,27 @@ text-decoration: underline blue solid;
         border-radius: none;
         font-size: 0.8rem;
     }
-    #header input:checked + nav {
+    #nav input:checked + nav {
         display: flex;
     }
-    #header article{
+    #nav article{
         padding: 5rem 0px;
     }
-    #header article h1{
+    #nav article h1{
         font-size: 2rem;
     }
-    #header article h2{
+    #nav article h2{
         font-size: 3.5rem;
     }
-    #header #searchBox {
+    #nav #searchBox {
         min-width: 35%;
     }
-    #sec-1 .container{ 
+    #sec-1 { 
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    #sec-1 article{
+    #sec-1  p{
         padding: 0px;
         text-align: left;
         width:51%;
@@ -663,7 +663,7 @@ text-decoration: underline blue solid;
         flex-flow: column nowrap;
         justify-content: center;
     }
-    #sec-1 article p{
+    #sec-1 .vision-image{
         padding-right: 1rem;
     }
     #sec-1 aside {
