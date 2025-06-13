@@ -14,18 +14,20 @@ html{
     overflow-x: hidden;
 }
 body{
-    background-color: ;
-    min-width: 1200px;
+    background-color: white;
+    
     
 }
 .header{
+
     width: 100%;
-    
     position: fixed;
+    flex: grow 1;
     top: 0;
     left: 0;
+    height: 100px;
     padding: 2rem 9%;
-    display: flex;
+    display: none;
     background-color:rgb(106, 82, 128);
     justify-content: space-between;
     align-items: center;
@@ -35,31 +37,37 @@ body{
 }
 .header img {
     display: block;
-    margin: 20px auto;
+    margin-top:10px;
     margin-left: 1px;
     max-width: 5%;
     background-color: red;
     border-radius: 5px;
     padding: 10px;
-    height: auto;
+    
   }
-}
+
 .navbar{
+    
+    
     font-size: 1.0rem;
     font-weight: 500;
     margin-left: 3.5rem;
     flex: 1;
+    
     text-align: right;
 }
 .navbar ul li{
+    margin-bottom: 30px;
     list-style: none;
     display: inline-block;
-    padding: 8px 12px;
-    position: relative;
+    padding: 2px 12px;
+    
     
 }
 .navbar ul li a{
+    
     color: white;
+    
 }
 .navbar ul li::after{
     content: '';
@@ -78,7 +86,8 @@ body{
 
 .join-us{
     position: fixed;
-        
+    margin-right: 0px;
+        margin-bottom: 20px;
         right: 30px;
         background-color: #b5f505;
         color: #0a0202;
@@ -99,16 +108,12 @@ body{
     html{
         scroll-behavior: smooth;
     }
-}
+
 
 
 /*-------body----*/
 
-.container-0{
-    background-color: rgb(162, 231, 23);
-    margin-top: 150px;
-    min-height: 40vh;
-}
+
 .container-0 h2{
    padding-top: 10px;
    margin-left: 30px;
@@ -183,49 +188,7 @@ body{
 
 
 
-.title-1 h1{
-   
-  width: 100%;
-  height: 40px;
-    font-size: 25px;
-    margin-top: 50px;
-    text-decoration: underline rgb(245, 99, 2);
-    margin-bottom:10px;
 
-}
-.items-sold{
-    
-    background-color: ;
-    padding: 15px;
-    width: 100%;
-    display: flex;
-    margin-top: 50px;
-    justify-content: space-between;
-    
-
-}
-.images-sold{
-
-    flex-wrap: wrap;
-    flex-flow: column;
-
-    background-color: e;
-    padding: 15px;
-    width: 100%;
-    min-width: 1200px;
-    margin: auto;
-    display: flex;
-    margin-top: 50px;
-    justify-content: space-between;
- 
-}
-.images-sold:hover{
-    cursor: pointer;
-    
-    
-
-
-}
 
 .item-1{
     margin-left: 5px;
@@ -256,46 +219,67 @@ body{
     color: rgb(252, 10, 22);
 
 }
-.items-sold:hover{
-    ite
-}
+
 
 
 
 /*--about us--*/
 
-.title-3{
-    margin-top:50px;
-    font: 1em sans-serif;
-    color:;
+.about-us h1{
+    width: 100%;
+    padding: 30px 30px 20px;
+    font-size: 50px;
+    color: #111;
+    text-decoration: underline red solid;
+
+
+
     
 
 }
 .container2{
+   margin: 20px 30px 50px;
     width: 100%;
-    margin-top: 30px;
-    min-height: 100vh;
-    display: flex;
-    background-color:;
+    height: 130vh;
+    
+    
+}
+.box{
     align-items: center;
+    margin: 30px;
+    width: 100%;
+    
+    
+    
 }
+
 .img-2 img{
-    width: 500px;
-    height: 550px;
-    margin-left: 20px;
-    
+    margin-right: 50px;
+    padding: 20px 0px 0px;
+    width: 90%;
     
 }
-.paragraph-1 p{
-    margin-left: 30px;
-    font-size: 40px;
+.paragraph-1 p {
+    text-align: center;
+    margin-right: 30px;
+    width: 60%;
+    margin-top: 20%;
+    padding: 0px 20px 30px;
+    color: #111;
+    font-size: 26px;
+    line-height: 24px;
+
+
+    
 }
+
+
 
 .paragraph-1 a{
 background-color: rgb(118, 109, 197);
 padding:8px 18px ;
 font-size: 20px;
-margin-left: 40%;
+margin-left: 20%;
 transition: 0.5s;
 border-radius: 3px;
 color: red;
@@ -309,38 +293,64 @@ color: red;
 /*--our services---*/
 
 .paragraph-2 h1{
-    text-align: center;
-    font-weight: bold;
-    font-size: 40px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 44px;
+    color: #111;
+    font-size: 30px;
     text-decoration: underline red solid;
 }
 
 .paragraph-2 p{
     margin-top: 50px;
     color: rgb(36, 37, 37);
-    font-size: 30px;
+    font-size: 26px;
+    margin-left: 24%;
     text-align: center;
     background-color:;
 }
 
 .container3{
     width: 100%;
+    min-width: 1200px;
+    
     align-items: center;
-    min-height: 100vh;
+    min-height: 120vh;
     margin-top: 50px;
-    background-color: ;
-    display: flex;
+    display:;
+    gap: 1rem;
     justify-content: space-between;
 
 }
+.crochet{
+    width: 30%;
+    
+
+}
 .container3a{
-    margin-left: 15PX;
-    margin-right: 15px;
+    align-items: center;
+    width: 100%;
+    padding: 30px 20px 30px;
+    margin:20px 50px 80px;
+    margin-bottom: 30px;
     background-color: aliceblue;
     border-radius: 10px;
     padding: 10px;
 
 }
+
+.interior{
+    width: 30%;
+   
+}
+.fashion{
+  width: 30%;
+   
+}
+
+
+
+
 .container3a h1{
 text-align: center;
 margin-bottom: 30px;
@@ -356,7 +366,10 @@ text-decoration: underline blue solid;
     
 
 }
+
 .paragraph-3a p{
+    
+    width: 100%;
     font-size: 25px;
     
 
@@ -377,18 +390,7 @@ text-decoration: underline blue solid;
     
     }
 
-    .message-us a{
-        font-family: Arial, Helvetica, sans-serif;
-        min-height: 10vh;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 35%;
-        color: red;
-        font-size: 50px;
-        text-decoration: none;
-      } 
-      
-
+  
     .back-to-top{
         position: fixed;
         bottom: 30px;
@@ -573,7 +575,150 @@ text-decoration: underline blue solid;
 
 /*MEDIA QUERRIES*/
 /*Smart phones */
-@media (min-width: 576px) {
+@media only screen and (min-width: 768px) {
+
+    .header{
+        display: block;
+        width: 100%;
+    }
+
+    .navbar{
+      flex-direction:column ;  
+    }
+    .navbar ul li{
+        flex-direction:column ;
+        align-items: center;
+
+    }
+    .navbar ul li a{
+        font-size: 1rem;
+        flex-shrink: initial;
+        padding: 10px 0;
+    }
+    .container{
+        width: 600px;
+    }
+    .box{
+        width: 600px;
+    }
+    .paragraph-1 p {
+        padding: 0px 20px 30px;
+        
+        
+    }
+
+    .img-2 {
+        padding: 20px 0px 20px;
+        
+    }
+
+    .container3a{
+        width: 600px;
+
+    }
+    .container-3a{
+        
+        float: left;
+    }
+
+    .paragraph-2 p{
+        width: 600px;
+    }
+    .paragraph-3a p{
+
+        
+    }
+}
+@media only screen and (min-width: 1000px) {
+
+    .header{
+        display: block;
+        width: 100%;
+    }
+    .navbar ul li{
+        
+        float: right;
+    }
+    .navbar ul li a{
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+    .container{
+        width: 100%;
+        min-width: 1200px;
+      
+    }
+    .box{
+        width: 97%;
+      
+
+    }
+    .paragraph-1 p {
+        margin-top: 3;
+        width: 50%;
+        margin-right: 30px;
+        float: right;
+        
+    }
+
+    .img-2 {
+        width: 40%;
+
+       float: left;
+        
+    }
+    .container3{
+        width: 100%;
+        
+       
+    }
+
+
+    .container3a{
+        height: auto;
+        width: 100%;
+
+    }
+    .container-3a{
+        width: 100%;
+        
+        
+    }
+
+    .paragraph-3a{
+        width: 100%;
+    }
+    .img-3 img{
+        width: 100%;
+        
+    }
+    .crochet{
+        
+       float: left; 
+
+    }
+
+    .interior{
+      
+        float: left;
+        margin-left: 2%;
+        
+    
+}
+   .fashion{
+    margin-right: 60px;
+    float:left;
+    margin-left: 2%;
+   
+
+}
+
+
+}
+
+
+
+
     html{
         font-size: 13px;
     }
