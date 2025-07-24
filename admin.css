@@ -1,9 +1,154 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f9fc;
-    padding: 30px;
-    color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color:darkblue;
+  color: white;
+}
+
+.logo img {
+  height: 40px; /* Adjust height to fit your header */
+  width: auto; /* Keeps image ratio correct for rectangular images */
+}
+
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+
+/* Navigation Links */
+.nav-links a {
+  margin-left: 20px;
+  color: white;
+  padding-right: 70px;
+  text-decoration: none;
+}
+.nav-links a::after{
+    content: '';
+    width: 0%;
+    height: 4px;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+    background-color:rgb(234, 250, 6);
+    border-radius: 10px;
+
+}
+.nav-links a:hover:after{
+    width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Icons section */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+/* Search icon */
+.search-icon {
+  font-size: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* Search Box */
+.search-box {
+  display: none;
+  text-align: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+  
+}
+
+.search-box input {
+  padding: 8px 12px;
+  width: 80%;
+  margin-top: 80px;
+  max-width: 400px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+/* Menu icon */
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Side Navigation */
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  background-color: green;
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.side-nav a {
+  display: block;
+  padding: 12px 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+ 
+}
+
+.side-nav a:hover {
+  background-color: #575757;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
   }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
   
   h1, h3 {
     color: #2b2d42;

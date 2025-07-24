@@ -1,63 +1,49 @@
-
-
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    
-    
-    
-    
-    padding: 1rem;
-    
-    
-    
-}
-.header{
-    width: 100%;
-     
-    min-height: 100hv;
-    background-color: rgb(42, 35, 53);
-    position: fixed;
-    top: 0;
-    margin: 0;
-    align-items: center;
-
+body {
+  font-family: Arial, sans-serif;
 }
 
-/* links */
+/* Header Styles */
+.header {
+  width: 100%;
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color:darkblue;
+  color: white;
+}
+
+.logo img {
+  height: 40px; /* Adjust height to fit your header */
+  width: auto; /* Keeps image ratio correct for rectangular images */
+}
 
 
-.nav1-link img{
-display: block;
-    margin: 20px auto;
-    margin-left: 1px;
-    max-width: 5%;
-    background-color: red;
-    border-radius: 5px;
-    padding: 10px;
-    height: auto;
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
 }
-.nav-link{
-    flex: 1;
-    text-align: right;    
+
+
+/* Navigation Links */
+.nav-links a {
+  margin-left: 20px;
+  color: white;
+  padding-right: 70px;
+  text-decoration: none;
 }
-.nav-link ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 8px 16px;
-    margin-right: 2px;
-    position: relative;
-    padding-right: 10px;
-    padding-top: 0px;
-   color: white;
-   margin-bottom: 30px;
-   transition: 0.5s;
-}
-.nav-link ul li::after{
+.nav-links a::after{
     content: '';
     width: 0%;
     height: 4px;
@@ -68,9 +54,102 @@ display: block;
     border-radius: 10px;
 
 }
-.nav-link ul li:hover:after{
+.nav-links a:hover:after{
     width: 100%;
 }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Icons section */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+/* Search icon */
+.search-icon {
+  font-size: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* Search Box */
+.search-box {
+  display: none;
+  text-align: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+  
+}
+
+.search-box input {
+  padding: 8px 12px;
+  width: 80%;
+  margin-top: 80px;
+  max-width: 400px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+/* Menu icon */
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Side Navigation */
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  background-color: green;
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.side-nav a {
+  display: block;
+  padding: 12px 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+ 
+}
+
+.side-nav a:hover {
+  background-color: #575757;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
 
 
  /*about us */
@@ -98,22 +177,15 @@ display: block;
     text-decoration: underline solid blueviolet;
 
  }
+
  .more{
     max-width: 1200px;
   margin: auto;
     width: 100%;
     margin-top: 30PX;
     display: flex;
-    
-    
     justify-content: space-between;
-    
-    
-    
-    
-    
-    
-    
+     
  }
 
 .explanation {
@@ -191,8 +263,9 @@ display: block;
 .div-3{
     max-width: 1200px;
   margin: auto;
-    background-color:gray;
+    background-color:rgb(21, 243, 243);
     text-align: center;
+    border-radius: 10px;
 }
 .our-team h2{
     margin-top: 70px;
@@ -207,7 +280,7 @@ display: block;
 .our-team-img{
     width: 20%;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgb(3, 3, 2);
     text-align: center;
     margin:40px 550px;
    
@@ -229,15 +302,15 @@ display: block;
 
 
 
-}
+
 /*---collaboration---*/
 
 .div-4{
     max-width: 1200px;
-  margin: auto;
-    background: linear-gradient(rgba(80, 36, 201, 0.9),rgba(107, 32, 204, 0.9)), url(Images/bg3.jpg) no-repeat center center/cover;
+    margin: auto;
+    background: linear-gradient(rgba(245, 244, 248, 0.9),rgba(243, 241, 245, 0.9)), url(Images/bg3.jpg) no-repeat center center/cover;
 
-    background-color:gainsboro; 
+    background-color:rgb(241, 155, 155); 
     border-radius: 10px;
 }
 .Lets-Collaborate{
@@ -245,9 +318,9 @@ display: block;
   margin: auto;
    
     margin-top: 70px;
-    color: green;
+    color: rgb(4, 54, 2);
     font-size:30px;
-    text-decoration: underline solid blueviolet;
+    text-decoration: underline solid rgb(5, 1, 10);
     font-style: unset;
     font-weight: bold;
     text-align: center;
@@ -458,16 +531,1359 @@ html{
     color: var(--haccent);
 }
 
+/*Smart phones 320px */
 
-/*MEDIA QUERRIES*/
-/*Smart phones */
-@media (min-width: 576px) {
+@media (min-width: 320px) {
     html{
         font-size: 13px;
     }
     .container {
-        width: 520px;
+        width: 320px;
     }
+    header{
+        width: 320px;
+    }
+
+
+    .navbar{
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 15%;
+    border-radius: 3px;
+}
+.navbar ul li{
+    display: none;   
+}
+
+.join-us{
+     font-size: 10px;
+     font-weight: 600;
+    }
+html{
+        scroll-behavior: smooth;
+    }
+
+#join-us{
+         width: 10%;
+         border-radius: 50%;
+         display: block;
+
+    }
+#join-us img{
+      width: 100%
+    }
+
+
+    /* our vision and missin*/
+.more{
+    width: 320px;
+    margin-top: 30PX;
+    flex-direction: column;
+    margin-bottom:70px ;
+    
+     
+ }
+
+.explanation {
+    width: 90%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+   
+}
+
+.vision-image img{
+    width:90%;
+    border-radius: 10px;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+
+}
+/* why us*/
+
+.div-2{
+width: 320px;
+}
+.Why-Us-title h2{
+   text-align: center;
+   font-size: 40px;
+
+ }
+.Why-Us{
+   
+    width: 320px;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+
+}
+
+.Why-Us-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    margin-bottom: 50px;
+
+}
+.Why-Us-explanation{
+    text-align: center;
+    margin-top: 10px;
+    text-align: justify;
+    font-size: 20px;
+   
+} 
+
+
+/*our team*/
+.our-team-img img{
+    width: 200px;
+    height: auto;
+    border-radius: 0px;
+    margin-top: 40px;
+
+}
+
+.div-3{
+    width: 320px;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.our-team h2{
+    margin-top: 70px;
+    padding-top: 50px;
+    color: white;
+    font-size:40px;
+   
+
+}
+.our-team-img{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+   
+   
+
+    
+    
+}
+.our-team-img img{
+    width: 90%;
+      margin-left: 5%;
+    margin-right: 5%;
+    
+    
+
+}
+.our-team-img h1{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+}
+
+/*lets colaborate*/
+.div-4{
+  width: 320px;
+}
+.Lets-Collaborate h2{
+    width: 320px;
+    margin-top: 70px;
+    font-size:40px;
+    
+
+}
+.colaboration{
+    width: 320px;
+    margin-top: 30PX;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+
+}
+
+.Collaborate-img{
+   width: 100%;
+   
+   border-radius: 10px;
+
+
+}
+.Collaborate-img img{
+   width: 100%;
+   border-radius: 10px;
+   height: auto;
+
+
+}
+.abaut-colaboration p{
+    text-align: center;
+    font-weight: 600;
+    text-align:justify; 
+    margin-top: 50px;
+    font-size: 20px;
+   
+}
+
+.message-us a {
+    margin-left: 20%;
+    padding: 5px 10px;
+    font-size: 35px;
+    font-family: serif;
+  
+  } 
+}
+
+/*Smart phones 344px */
+
+@media (min-width: 344px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 344px;
+    }
+    header{
+        width: 344px;
+    }
+
+
+    .navbar{
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 15%;
+    border-radius: 3px;
+}
+.navbar ul li{
+    display: none;   
+}
+
+.join-us{
+     font-size: 10px;
+     font-weight: 600;
+    }
+html{
+        scroll-behavior: smooth;
+    }
+
+#join-us{
+         width: 10%;
+         border-radius: 50%;
+         display: block;
+
+    }
+#join-us img{
+      width: 100%
+    }
+
+
+    /* our vision and missin*/
+.more{
+    width: 344px;
+    margin-top: 30PX;
+    flex-direction: column;
+    margin-bottom:70px ;
+    
+     
+ }
+
+.explanation {
+    width: 90%;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+   
+}
+
+.vision-image img{
+    width:90%;
+    border-radius: 10px;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+
+}
+/* why us*/
+
+.div-2{
+width: 344px;
+}
+.Why-Us-title h2{
+   text-align: center;
+   font-size: 40px;
+
+ }
+.Why-Us{
+   
+    width: 344px;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+
+}
+
+.Why-Us-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    margin-bottom: 50px;
+
+}
+.Why-Us-explanation{
+    text-align: center;
+    margin-top: 10px;
+    text-align: justify;
+   
+} 
+
+
+/*our team*/
+.our-team-img img{
+    width: 200px;
+    height: auto;
+    border-radius: 0px;
+    margin-top: 40px;
+
+}
+
+.div-3{
+    width: 344px;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.our-team h2{
+    margin-top: 70px;
+    padding-top: 50px;
+    color: white;
+    font-size:40px;
+   
+
+}
+.our-team-img{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+   
+   
+
+    
+    
+}
+.our-team-img img{
+    width: 90%;
+      margin-left: 5%;
+    margin-right: 5%;
+    
+    
+
+}
+.our-team-img h1{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+}
+
+/*lets colaborate*/
+.div-4{
+  width: 344px;
+}
+.Lets-Collaborate h2{
+    width: 344px;
+    margin-top: 70px;
+    font-size:40px;
+    
+
+}
+.colaboration{
+    width: 344px;
+    margin-top: 30PX;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+
+}
+
+.Collaborate-img{
+   width: 100%;
+   
+   border-radius: 10px;
+
+
+}
+.Collaborate-img img{
+   width: 100%;
+   border-radius: 10px;
+   height: auto;
+
+
+}
+.abaut-colaboration p{
+    text-align: center;
+    font-weight: 600;
+    text-align:justify; 
+    margin-top: 50px;
+   
+}
+
+.message-us a {
+    margin-left: 20%;
+    padding: 5px 10px;
+    font-size: 35px;
+    font-family: serif;
+  
+  } 
+}
+/*MEDIA QUERRIES*/
+
+
+@media (min-width: 360px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 360px;
+    }
+    header{
+        width: 360px;
+    }
+
+
+    .navbar{
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 10%;
+    border-radius: 3px;
+}
+.navbar ul li{
+    display: none;   
+}
+
+.join-us{
+     font-size: 10px;
+     font-weight: 600;
+    }
+html{
+        scroll-behavior: smooth;
+    }
+
+#join-us{
+         width: 6%;
+         border-radius: 50%;
+         display: block;
+
+    }
+#join-us img{
+      width: 100%
+    }
+
+
+
+    /* our vision and missin*/
+.more{
+    width: 360px;
+    margin-top: 30PX;
+    flex-direction: column;
+    margin-bottom:70px ;
+    
+     
+ }
+
+.explanation {
+    width: 90%;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+   
+}
+
+.vision-image img{
+    width:90%;
+    border-radius: 10px;
+    height: 300px;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+
+}
+/* why us*/
+
+.div-2{
+width: 360px;
+}
+.Why-Us-title h2{
+   text-align: center;
+   font-size: 40px;
+
+ }
+.Why-Us{
+   
+    width:360px;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+
+}
+
+.Why-Us-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: 300px;
+    margin-bottom: 50px;
+
+}
+.Why-Us-explanation{
+    text-align: center;
+    margin-top: 10px;
+    text-align: justify;
+   
+} 
+
+
+/*our team*/
+.our-team-img img{
+    width: 200px;
+    height: 250px;
+    border-radius: 0px;
+    margin-top: 40px;
+
+}
+
+.div-3{
+    width: 360px;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.our-team h2{
+    margin-top: 70px;
+    padding-top: 50px;
+    color: white;
+    font-size:40px;
+   
+
+}
+.our-team-img{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+   
+   
+
+    
+    
+}
+.our-team-img img{
+    width: 90%;
+      margin-left: 5%;
+    margin-right: 5%;
+    
+    
+
+}
+.our-team-img h1{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+}
+
+/*lets colaborate*/
+.div-4{
+  width: 360px;
+}
+.Lets-Collaborate h2{
+    width: 360px;
+    margin-top: 70px;
+    font-size:40px;
+    
+
+}
+.colaboration{
+    width: 360px;
+    margin-top: 30PX;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+
+}
+
+.Collaborate-img{
+   width: 100%;
+   border-radius: 10px;
+   height: 300px;
+
+
+}
+.Collaborate-img img{
+   width: 100%;
+   border-radius: 10px;
+   height: 300px;
+
+
+}
+.abaut-colaboration p{
+    text-align: center;
+    font-weight: 600;
+    text-align:justify; 
+    margin-top: 50px;
+   
+}
+
+.message-us a {
+    margin-left: 20%;
+    padding: 5px 15px;
+    font-size: 35px;
+  
+  } 
+}
+
+/*MEDIA QUERRIES*/
+
+
+@media (min-width: 375px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 375px;
+    }
+    header{
+        width: 375px;
+    }
+
+
+    .navbar{
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 10%;
+    border-radius: 3px;
+}
+.navbar ul li{
+    display: none;   
+}
+
+.join-us{
+     font-size: 10px;
+     font-weight: 600;
+    }
+html{
+        scroll-behavior: smooth;
+    }
+
+#join-us{
+         width: 6%;
+         border-radius: 50%;
+         display: block;
+
+    }
+#join-us img{
+      width: 100%
+    }
+
+
+
+    /* our vision and missin*/
+.more{
+    width: 375px;
+    margin-top: 30PX;
+    flex-direction: column;
+    margin-bottom:70px ;
+    
+     
+ }
+
+.explanation {
+    width: 90%;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+   
+}
+
+.vision-image img{
+    width:90%;
+    border-radius: 10px;
+    height: 300px;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+
+}
+/* why us*/
+
+.div-2{
+width: 375px;
+}
+.Why-Us-title h2{
+   text-align: center;
+   font-size: 40px;
+
+ }
+.Why-Us{
+   
+    width:375px;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+
+}
+
+.Why-Us-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: 300px;
+    margin-bottom: 50px;
+
+}
+.Why-Us-explanation{
+    text-align: center;
+    margin-top: 10px;
+    text-align: justify;
+   
+} 
+
+
+/*our team*/
+.our-team-img img{
+    width: 200px;
+    height: 250px;
+    border-radius: 0px;
+    margin-top: 40px;
+
+}
+
+.div-3{
+    width: 375px;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.our-team h2{
+    margin-top: 70px;
+    padding-top: 50px;
+    color: white;
+    font-size:40px;
+   
+
+}
+.our-team-img{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+   
+   
+
+    
+    
+}
+.our-team-img img{
+    width: 90%;
+      margin-left: 5%;
+    margin-right: 5%;
+    
+    
+
+}
+.our-team-img h1{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+}
+
+/*lets colaborate*/
+.div-4{
+  width: 375px;
+}
+.Lets-Collaborate h2{
+    width: 375px;
+    margin-top: 70px;
+    font-size:40px;
+    
+
+}
+.colaboration{
+    width: 375px;
+    margin-top: 30PX;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+
+}
+
+.Collaborate-img{
+   width: 100%;
+   border-radius: 10px;
+   height: 300px;
+
+
+}
+.Collaborate-img img{
+   width: 100%;
+   border-radius: 10px;
+   height: 300px;
+
+
+}
+.abaut-colaboration p{
+    text-align: center;
+    font-weight: 600;
+    text-align:justify; 
+    margin-top: 50px;
+   
+}
+
+.message-us a {
+    margin-left: 20%;
+    padding: 5px 15px;
+    font-size: 35px;
+  
+  } 
+}
+
+/*MEDIA QUERRIES*/
+
+@media (min-width: 390px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 390px;
+    }
+    header{
+        width: 390px;
+ 
+    }
+}
+
+/*MEDIA QUERRIES*/
+
+@media (min-width: 411px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 411px;
+    }
+    header{
+        width: 411px;
+ 
+    }
+}
+
+/*MEDIA QUERRIES*/
+
+@media (min-width: 412px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 412px;
+    }
+    header{
+        width: 412px;
+ 
+    }
+}
+
+/*MEDIA QUERRIES*/
+
+@media (min-width: 414px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 414px;
+    }
+    header{
+        width: 414px;
+ 
+    }
+}
+
+/*MEDIA QUERRIES*/
+
+@media (min-width: 430px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 430px;
+    }
+    header{
+        width: 430px;
+ 
+    }
+}
+/*MEDIA QUERRIES*/
+
+
+@media (min-width: 480px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 480px;
+    }
+    header{
+        width: 480px;
+    }
+
+
+    .navbar{
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 10%;
+    border-radius: 3px;
+}
+.navbar ul li{
+    display: none;   
+}
+
+.join-us{
+     font-size: 10px;
+     font-weight: 600;
+    }
+html{
+        scroll-behavior: smooth;
+    }
+
+#join-us{
+         width: 6%;
+         border-radius: 50%;
+         display: block;
+
+    }
+#join-us img{
+      width: 100%
+    }
+
+
+
+    /* our vision and missin*/
+.more{
+    width: 480px;
+    margin-top: 30PX;
+    flex-direction: column;
+    margin-bottom:70px ;
+    
+     
+ }
+
+.explanation {
+    width: 90%;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+   
+}
+
+.vision-image img{
+    width:90%;
+    border-radius: 10px;
+    height: 300px;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+
+}
+/* why us*/
+
+.div-2{
+width: 480px;
+}
+.Why-Us-title h2{
+   text-align: center;
+   font-size: 40px;
+
+ }
+.Why-Us{
+   
+    width:480px;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+
+}
+
+.Why-Us-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: 300px;
+    margin-bottom: 50px;
+
+}
+.Why-Us-explanation{
+    text-align: center;
+    margin-top: 10px;
+    text-align: justify;
+   
+} 
+
+
+/*our team*/
+.our-team-img img{
+    width: 200px;
+    height: 250px;
+    border-radius: 0px;
+    margin-top: 40px;
+
+}
+
+.div-3{
+    width: 480px;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.our-team h2{
+    margin-top: 70px;
+    padding-top: 50px;
+    color: white;
+    font-size:40px;
+   
+
+}
+.our-team-img{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+   
+   
+
+    
+    
+}
+.our-team-img img{
+    width: 90%;
+      margin-left: 5%;
+    margin-right: 5%;
+    
+    
+
+}
+.our-team-img h1{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+}
+
+/*lets colaborate*/
+.div-4{
+  width: 480px;
+}
+.Lets-Collaborate h2{
+    width: 480px;
+    margin-top: 70px;
+    font-size:40px;
+    
+
+}
+.colaboration{
+    width: 480px;
+    margin-top: 30PX;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+
+}
+
+.Collaborate-img{
+   width: 100%;
+   border-radius: 10px;
+
+
+}
+.Collaborate-img img{
+   width: 100%;
+   border-radius: 10px;
+
+
+}
+.abaut-colaboration p{
+    text-align: center;
+    font-weight: 600;
+    text-align:justify; 
+    margin-top: 50px;
+   
+}
+
+.message-us a {
+    margin-left: 30%;
+    padding: 5px 15px;
+    font-size: 35px;
+  
+  } 
+
+}
+
+/*MEDIA QUERRIES*/
+
+@media (min-width: 540px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 540px;
+    }
+    header{
+        width: 540px;
+ 
+    }
+}
+/*Smart phones */
+
+@media (min-width: 600px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 600px;
+    }
+    header{
+        width: 600px;
+    }
+
+
+    .navbar{
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 10%;
+    border-radius: 3px;
+}
+.navbar ul li{
+    display: none;   
+}
+
+.join-us{
+     font-size: 10px;
+     font-weight: 600;
+    }
+html{
+        scroll-behavior: smooth;
+    }
+
+#join-us{
+         width: 6%;
+         border-radius: 50%;
+         display: block;
+
+    }
+#join-us img{
+      width: 100%
+    }
+
+
+    /* our vision and missin*/
+.more{
+    width: 600px;
+    margin-top: 30PX;
+    flex-direction: column;
+    margin-bottom:70px ;
+    
+     
+ }
+
+.explanation {
+    width: 90%;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+   
+}
+
+.vision-image img{
+    width:90%;
+    border-radius: 10px;
+    height: 500px;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+
+}
+/* why us*/
+
+.div-2{
+width: 600px;
+}
+.Why-Us-title h2{
+   text-align: center;
+   font-size: 40px;
+
+ }
+.Why-Us{
+   
+    width: 600px;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+
+}
+
+.Why-Us-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: 400px;
+    margin-bottom: 50px;
+
+}
+.Why-Us-explanation{
+    text-align: center;
+    margin-top: 10px;
+    text-align: justify;
+   
+} 
+
+
+/*our team*/
+.our-team-img img{
+    width: 200px;
+    height: 250px;
+    border-radius: 0px;
+    margin-top: 40px;
+
+}
+
+.div-3{
+    width: 600px;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.our-team h2{
+    margin-top: 70px;
+    padding-top: 50px;
+    color: white;
+    font-size:40px;
+   
+
+}
+.our-team-img{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+   
+   
+
+    
+    
+}
+.our-team-img img{
+    width: 90%;
+      margin-left: 5%;
+    margin-right: 5%;
+    
+    
+
+}
+.our-team-img h1{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+}
+
+/*lets colaborate*/
+.div-4{
+  width: 600px;
+}
+.Lets-Collaborate h2{
+    width: 600px;
+    margin-top: 70px;
+    font-size:40px;
+    
+
+}
+.colaboration{
+    width: 600px;
+    margin-top: 30PX;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+
+}
+
+.Collaborate-img{
+   width: 100%;
+   border-radius: 10px;
+
+
+}
+.Collaborate-img img{
+   width: 100%;
+   border-radius: 10px;
+
+
+}
+.abaut-colaboration p{
+    text-align: center;
+    font-weight: 600;
+    text-align:justify; 
+    margin-top: 50px;
+   
+}
+
+.message-us a {
+    margin-left: 30%;
+    padding: 5px 15px;
+    font-size: 35px;
+  
+  } 
+/*others*/
     #nav {
         background-color: transparent;
     }
@@ -482,6 +1898,1096 @@ html{
     #nav #searchBox {
         transform: translateY(25px);
     }
+}
+}
+
+/* media quaries 912px*/
+@media (min-width: 912px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 912px;
+    }
+    header{
+        width: 912px;
+    }
+
+
+    .navbar{
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 10%;
+    border-radius: 3px;
+}
+.navbar ul li{
+    display: inline-block;   
+}
+
+.join-us{
+     font-size: 10px;
+     font-weight: 600;
+    }
+html{
+        scroll-behavior: smooth;
+    }
+
+#join-us{
+         width: 6%;
+         border-radius: 50%;
+         display: none;
+
+    }
+#join-us img{
+      width: 100%
+    }
+
+
+    /* our vision and missin*/
+.more{
+    width: 912px;
+    margin-top: 30PX;
+    flex-direction: column;
+    margin-bottom:70px ;
+    
+     
+ }
+
+.explanation {
+    width: 90%;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+   
+}
+
+.vision-image img{
+    width:90%;
+    border-radius: 10px;
+    height: 500px;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+
+}
+/* why us*/
+
+.div-2{
+width: 912px;
+}
+.Why-Us-title h2{
+   text-align: center;
+   font-size: 40px;
+
+ }
+.Why-Us{
+   
+    width: 912px;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+
+}
+
+.Why-Us-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    margin-bottom: 50px;
+
+}
+.Why-Us-explanation{
+    text-align: center;
+    margin-top: 10px;
+    text-align: justify;
+   
+} 
+
+
+/*our team*/
+.our-team-img img{
+    width: 200px;
+    height: 250px;
+    border-radius: 0px;
+    margin-top: 40px;
+
+}
+
+.div-3{
+    width: 912px;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.our-team h2{
+    margin-top: 70px;
+    padding-top: 50px;
+    color: white;
+    font-size:40px;
+   
+
+}
+.our-team-img{
+    width: 40%;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+   
+   
+
+    
+    
+}
+.our-team-img img{
+    width: 90%;
+      margin-left: 5%;
+    margin-right: 5%;
+    
+    
+
+}
+.our-team-img h1{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+}
+
+/*lets colaborate*/
+.div-4{
+  width: 912px;
+}
+.Lets-Collaborate h2{
+    width: 912pxpx;
+    margin-top: 70px;
+    font-size:40px;
+    
+
+}
+.colaboration{
+    width: 912px;
+    margin-top: 30PX;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+
+}
+
+.Collaborate-img{
+   width: 100%;
+   border-radius: 10px;
+
+
+}
+.Collaborate-img img{
+   width: 100%;
+   border-radius: 10px;
+
+
+}
+.abaut-colaboration p{
+    text-align: center;
+    font-weight: 600;
+    text-align:justify; 
+    margin-top: 50px;
+   
+}
+
+.message-us a {
+    margin-left: 30%;
+    padding: 5px 15px;
+    font-size: 35px;
+  
+  } 
+
+}
+
+
+/*MEDIA QUERRIES*/
+
+@media (min-width: 768px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 768px;
+    }
+    header{
+        width: 768px;
+ 
+    }
+}
+
+
+/*MEDIA QUERRIES 853px*/
+
+
+@media (min-width: 853px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 853px;
+    }
+    header{
+        width: 853px;
+    }
+
+
+    .navbar{
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 10%;
+    border-radius: 3px;
+}
+.navbar ul li{
+    display: inline-block;   
+}
+
+.join-us{
+     font-size: 10px;
+     font-weight: 600;
+    }
+html{
+        scroll-behavior: smooth;
+    }
+
+#join-us{
+         width: 5%;
+         border-radius: 50%;
+         display: none;
+
+    }
+#join-us img{
+      width: 100%
+    }
+
+
+
+    /* our vision and missin*/
+.more{
+    width: 853px;
+    margin-top: 30PX;
+   flex-direction: row;
+    margin-bottom:70px ;
+    
+     
+ }
+
+.explanation {
+    width: 50%;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+   
+}
+
+.vision-image img{
+    width:90%;
+    border-radius: 10px;
+    height: 500px;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+
+}
+/* why us*/
+
+.div-2{
+width: 853px;
+}
+.Why-Us-title h2{
+   text-align: center;
+   font-size: 40px;
+
+ }
+.Why-Us{
+   
+    width:853px;
+    align-items: center;
+    flex-direction: row;
+    padding: 30px;
+
+}
+
+.Why-Us-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: 400px;
+    margin-bottom: 50px;
+
+}
+.Why-Us-explanation{
+    width: 50%;
+    text-align: center;
+    margin-top: 10px;
+    text-align: justify;
+   
+} 
+
+
+/*our team*/
+.our-team-img img{
+    width: 200px;
+    height: 250px;
+    border-radius: 0px;
+    margin-top: 40px;
+
+}
+
+.div-3{
+    width: 853px;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.our-team h2{
+    margin-top: 70px;
+    padding-top: 50px;
+    color: white;
+    font-size:40px;
+   
+
+}
+.our-team-img{
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    
+   
+   
+
+    
+    
+}
+.our-team-img img{
+    width: 90%;
+      margin-left: 5%;
+    margin-right: 5%;
+    
+    
+
+}
+.our-team-img h1{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+}
+
+/*lets colaborate*/
+.div-4{
+  width: 853px;
+
+}
+.Lets-Collaborate h2{
+    width: 853px;
+    margin-top: 70px;
+    font-size:40px;
+    
+
+}
+.colaboration{
+    width: 853px;
+    margin-top: 30PX;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    justify-content: center;
+
+}
+
+.Collaborate-img{
+   width: 100%;
+   border-radius: 10px;
+
+
+}
+.Collaborate-img img{
+   width: 500px;
+   height: 300px;
+   border-radius: 10px;
+
+
+}
+.abaut-colaboration p{
+    width: 90%;
+    font-size: 29px;
+    text-align: center;
+    font-weight: 600;
+    text-align:justify; 
+    margin-top: 50px;
+   
+}
+
+.message-us a {
+    margin-left: 40%;
+    padding: 5px 15px;
+    font-size: 35px;
+  
+  } 
+}
+
+/*MEDIA QUERRIES 1280px*/
+
+
+@media (min-width: 1280px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 1280px;
+    }
+    header{
+        width: 1280px;
+    }
+
+
+    .navbar{
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 10%;
+    border-radius: 3px;
+}
+.navbar ul li{
+    display: inline-block;   
+}
+
+.join-us{
+     font-size: 10px;
+     font-weight: 600;
+    }
+html{
+        scroll-behavior: smooth;
+    }
+
+#join-us{
+         width: 5%;
+         border-radius: 50%;
+         display: none;
+
+    }
+#join-us img{
+      width: 100%
+    }
+
+
+
+    /* our vision and missin*/
+.more{
+    width: 1280px;
+    margin-top: 30PX;
+   flex-direction: row;
+    margin-bottom:70px ;
+    
+     
+ }
+
+.explanation {
+    width: 50%;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+   
+}
+
+.vision-image img{
+    width:90%;
+    border-radius: 10px;
+    height: 500px;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+
+}
+/* why us*/
+
+.div-2{
+width: 1280px;
+}
+.Why-Us-title h2{
+   text-align: center;
+   font-size: 40px;
+
+ }
+.Why-Us{
+   
+    width:1280px;
+    align-items: center;
+    flex-direction: row;
+    padding: 30px;
+
+}
+
+.Why-Us-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: 400px;
+    margin-bottom: 50px;
+
+}
+.Why-Us-explanation{
+    width: 50%;
+    text-align: center;
+    margin-top: 10px;
+    text-align: justify;
+   
+} 
+
+
+/*our team*/
+.our-team-img img{
+    width: 200px;
+    height: 250px;
+    border-radius: 0px;
+    margin-top: 40px;
+
+}
+
+.div-3{
+    width: 1280px;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.our-team h2{
+    margin-top: 70px;
+    padding-top: 50px;
+    color: white;
+    font-size:40px;
+   
+
+}
+.our-team-img{
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    
+   
+   
+
+    
+    
+}
+.our-team-img img{
+    width: 90%;
+      margin-left: 5%;
+    margin-right: 5%;
+    
+    
+
+}
+.our-team-img h1{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+}
+
+/*lets colaborate*/
+.div-4{
+  width: 1280px;
+
+}
+.Lets-Collaborate h2{
+    width: 1280px;
+    margin-top: 70px;
+    font-size:40px;
+    
+
+}
+.colaboration{
+    width: 1280px;
+    margin-top: 30PX;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    justify-content: center;
+
+}
+
+.Collaborate-img{
+   width: 100%;
+   border-radius: 10px;
+
+
+}
+.Collaborate-img img{
+   width: 500px;
+   height: 300px;
+   border-radius: 10px;
+
+
+}
+.abaut-colaboration p{
+    width: 60%;
+    
+    text-align: center;
+    font-weight: 600;
+    text-align:justify; 
+    margin-top: 50px;
+   
+}
+
+.message-us a {
+    margin-left: 40%;
+    padding: 5px 15px;
+    font-size: 35px;
+  
+  } 
+}
+
+/*MEDIA QUERRIES 912px*/
+
+
+@media (min-width: 912px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 912px;
+    }
+    header{
+        width: 912px;
+    }
+
+
+    .navbar{
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 10%;
+    border-radius: 3px;
+}
+.navbar ul li{
+    display: inline-block;   
+}
+
+.join-us{
+     font-size: 10px;
+     font-weight: 600;
+    }
+html{
+        scroll-behavior: smooth;
+    }
+
+#join-us{
+         width: 5%;
+         border-radius: 50%;
+         display: none;
+
+    }
+#join-us img{
+      width: 100%
+    }
+
+
+
+    /* our vision and missin*/
+.more{
+    width: 912px;
+    margin-top: 30PX;
+   flex-direction: row;
+    margin-bottom:70px ;
+    
+     
+ }
+
+.explanation {
+    width: 50%;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+   
+}
+
+.vision-image img{
+    width:90%;
+    border-radius: 10px;
+    height: 500px;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+
+}
+/* why us*/
+
+.div-2{
+width: 912px;
+}
+.Why-Us-title h2{
+   text-align: center;
+   font-size: 40px;
+
+ }
+.Why-Us{
+   
+    width:912px;
+    align-items: center;
+    flex-direction: row;
+    padding: 30px;
+
+}
+
+.Why-Us-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: 400px;
+    margin-bottom: 50px;
+
+}
+.Why-Us-explanation{
+    width: 50%;
+    text-align: center;
+    margin-top: 10px;
+    text-align: justify;
+   
+} 
+
+
+/*our team*/
+.our-team-img img{
+    width: 200px;
+    height: 250px;
+    border-radius: 0px;
+    margin-top: 40px;
+
+}
+
+.div-3{
+    width: 912px;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.our-team h2{
+    margin-top: 70px;
+    padding-top: 50px;
+    color: white;
+    font-size:40px;
+   
+
+}
+.our-team-img{
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    
+   
+   
+
+    
+    
+}
+.our-team-img img{
+    width: 90%;
+      margin-left: 5%;
+    margin-right: 5%;
+    
+    
+
+}
+.our-team-img h1{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+}
+
+/*lets colaborate*/
+.div-4{
+  width: 912px;
+
+}
+.Lets-Collaborate h2{
+    width: 912px;
+    margin-top: 70px;
+    font-size:40px;
+    
+
+}
+.colaboration{
+    width: 912px;
+    margin-top: 30PX;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    justify-content: center;
+
+}
+
+.Collaborate-img{
+   width: 100%;
+   border-radius: 10px;
+
+
+}
+.Collaborate-img img{
+   width: 500px;
+   height: 300px;
+   border-radius: 10px;
+
+
+}
+.abaut-colaboration p{
+    width: 90%;
+    font-size: 29px;
+    text-align: center;
+    font-weight: 600;
+    text-align:justify; 
+    margin-top: 50px;
+   
+}
+
+.message-us a {
+    margin-left: 40%;
+    padding: 5px 15px;
+    font-size: 35px;
+  
+  } 
+}
+
+/*MEDIA QUERRIES 1024px*/
+
+
+@media (min-width: 1024px) {
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 1024px;
+    }
+    header{
+        width: 1024px;
+    }
+
+
+    .navbar{
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 10%;
+    border-radius: 3px;
+}
+.navbar ul li{
+    display: inline-block;   
+}
+
+.join-us{
+     font-size: 10px;
+     font-weight: 600;
+    }
+html{
+        scroll-behavior: smooth;
+    }
+
+#join-us{
+         width: 5%;
+         border-radius: 50%;
+         display: none;
+
+    }
+#join-us img{
+      width: 100%
+    }
+
+
+
+    /* our vision and missin*/
+.more{
+    width: 1024px;
+    margin-top: 30PX;
+   flex-direction: row;
+    margin-bottom:70px ;
+    
+     
+ }
+
+.explanation {
+    width: 50%;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+   
+}
+
+.vision-image img{
+    width:90%;
+    border-radius: 10px;
+    height: 500px;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+   
+
+}
+/* why us*/
+
+.div-2{
+width: 1024px;
+}
+.Why-Us-title h2{
+   text-align: center;
+   font-size: 40px;
+
+ }
+.Why-Us{
+   
+    width:1024px;
+    align-items: center;
+    flex-direction: row;
+    padding: 30px;
+
+}
+
+.Why-Us-img img{
+    width: 100%;
+    border-radius: 10px;
+    height: 400px;
+    margin-bottom: 50px;
+
+}
+.Why-Us-explanation{
+    width: 50%;
+    text-align: center;
+    margin-top: 10px;
+    text-align: justify;
+   
+} 
+
+
+/*our team*/
+.our-team-img img{
+    width: 200px;
+    height: 250px;
+    border-radius: 0px;
+    margin-top: 40px;
+
+}
+
+.div-3{
+    width: 1024px;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.our-team h2{
+    margin-top: 70px;
+    padding-top: 50px;
+    color: white;
+    font-size:40px;
+   
+
+}
+.our-team-img{
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    
+   
+   
+
+    
+    
+}
+.our-team-img img{
+    width: 90%;
+      margin-left: 5%;
+    margin-right: 5%;
+    
+    
+
+}
+.our-team-img h1{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+}
+
+/*lets colaborate*/
+.div-4{
+  width: 1024px;
+
+}
+.Lets-Collaborate h2{
+    width: 1024px;
+    margin-top: 70px;
+    font-size:40px;
+    
+
+}
+.colaboration{
+    width: 1024px;
+    margin-top: 30PX;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    justify-content: center;
+
+}
+
+.Collaborate-img{
+   width: 100%;
+   border-radius: 10px;
+
+
+}
+.Collaborate-img img{
+   width: 500px;
+   height: 300px;
+   border-radius: 10px;
+
+
+}
+.abaut-colaboration p{
+    width: 90%;
+    font-size: 29px;
+    text-align: center;
+    font-weight: 600;
+    text-align:justify; 
+    margin-top: 50px;
+   
+}
+
+.message-us a {
+    margin-left: 40%;
+    padding: 5px 15px;
+    font-size: 35px;
+  
+  } 
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -622,8 +3128,24 @@ html{
         width: 20%;
     }
 }
+
 /* Standard PC screens */
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
+
+    /*MEDIA QUERRIES*/
+
+
+    html{
+        font-size: 13px;
+    }
+    .container {
+        width: 1280px;
+    }
+    header{
+        width: 1400px;
+ 
+    }
+
     html{
         font-size: 15px;
     }

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <title>Admin Dashboard</title>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
@@ -8,6 +10,46 @@
   <link rel="stylesheet" href="admin.css">
 </head>
 <body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <!-- Replace this -->
+<!-- <div class="logo">MySite</div> -->
+
+<!-- With this -->
+<div class="logo">
+  <img src="images/logo.jpg" alt="Logo">
+</div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact </a>
+    </nav>
+
+    <!-- Right-side Icons -->
+    <div class="icons">
+      <i class="fas fa-search search-icon" onclick="toggleSearch()"></i>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+  <!-- Search Box (hidden by default) -->
+<div id="searchBox" class="search-box">
+  <input type="text" placeholder="Search..." />
+</div>
+
+
+  <!-- Mobile Side Navigation -->
+  <div id="sideNav" class="side-nav">
+    <span class="close-btn" onclick="toggleMenu()">&times;</span>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact </a>
+  </div>
+
   <h1>Admin Dashboard</h1>
 
   <!-- Upload Logo -->
@@ -27,6 +69,18 @@
 
   <script src="firebase-config.js"></script>
   <script src="script.js"></script>
+
+  <script>
+    function toggleMenu() {
+  const nav = document.getElementById("sideNav");
+  nav.style.width = nav.style.width === "250px" ? "0" : "250px";
+
+}
+function toggleSearch() {
+  const box = document.getElementById("searchBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+  </script>
  
 </body>
 </html>

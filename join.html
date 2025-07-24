@@ -4,24 +4,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script> src="js/bootstrap.bundle.min.js"</script>
   <link rel="stylesheet" href="join.css">
   <title>Join us</title>
 
     <body>
-        <header>
-            <img src="images/logo.jpg" alt="My Website Logo" width="150">
-            <nav>
-              <a href="home.html">Home</a>
-              <li><a href="Shop now.html">SHOP NOW</a></li>
-              <a href="about.html">About</a>
-              <a href="services.html">Services</a>
-              <a href="contact.html">Contact</a>
-            </nav>
-          </header>
+  <!-- Header Section -->
+  <header class="header">
+    <!-- Replace this -->
+<!-- <div class="logo">MySite</div> -->
+
+<!-- With this -->
+<div class="logo">
+  <img src="images/logo.jpg" alt="Logo">
+</div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact </a>
+    </nav>
+
+    <!-- Right-side Icons -->
+    <div class="icons">
+      <i class="fas fa-search search-icon" onclick="toggleSearch()"></i>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+  <!-- Search Box (hidden by default) -->
+<div id="searchBox" class="search-box">
+  <input type="text" placeholder="Search..." />
+</div>
+
+
+  <!-- Mobile Side Navigation -->
+  <div id="sideNav" class="side-nav">
+    <span class="close-btn" onclick="toggleMenu()">&times;</span>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact </a>
+  </div>
+
+  <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+        <!----
+            <div class=".side-nav">
+            <img src="images/logo.jpg" alt="My Website Logo" width="150"> 
+
+                <nav id="sideNav" class="side-nav">
+                  <span class="close-btw" onclick="ToggleMenu()">&times; </span>
+                    <ul>
+                        
+                        
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT US</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contact.html">CONTACT US</a></li>
+                          
+                    </ul>
+
+                </nav>
+               <a class="join-us" href="join.html  ">Message us</a>
+               <div class="menu-icon" onclick="ToggleMenu()">&#9776;</div>
+                </div>
+              -->
+        </header>
+      
         <div class="sec-5">
           <div class="form-text" >
-            <p>We would love to hear from you! Whether you have a question, feedback, or need support, feel free to reach out using the form below.<br> You can also contact us directly throuh our email, phonenumber or social media channels. We aim to repond to all inquireries within 24-48 hours.<br> Your thoughs and concern are important to us<z/p>
-          </div>
+<p>We would love to hear from you! feel free to reach out using the form below Whether you have a:</p>
+              <ul ><li>Question</li>
+                <li>Feedback</li>
+                <li>Need suppor</li>
+              </ul>
+              
+              <p>You can also contact us directly through:</p>
+              <br>
+              <ul ><li> Our email</li>
+                <br>
+                <li>Phonenumber </li>
+                <br>
+                <li>Social media channels.</li>
+                
+              </ul>
+             
+                <p> We aim to repond to all inquireries within 24-48 hours. Your thoughts and concern are important to us<z/p>          </div>
             <div class="forms">
                 
               
@@ -42,6 +122,18 @@
         
        
             <script>
+                function toggleMenu() {
+  const nav = document.getElementById("sideNav");
+  nav.style.width = nav.style.width === "250px" ? "0" : "250px";
+
+}
+function toggleSearch() {
+  const box = document.getElementById("searchBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+  </script>
+
+            <script>
                 /*document.querySelector("form").addEventListener("submit", function(event) {
                   const username = document.getElementById("username").value.trim(username);
                   const email = document.getElementById("email").value.trim(email);
@@ -61,6 +153,8 @@
                 document.getElementById("messege-success").style.desplay = "block";
                 this.reset(); //clear the form after submission
                 })
+
+                
 
 
                 
@@ -120,22 +214,32 @@
 <a href="#top" class="back-to-top">Back to Top</a>
 
 <script>
+  function toggleMenu() {
+  const nav = document.getElementById("sideNav");
+  nav.style.width = nav.style.width === "250px" ? "0" : "250px";
+}
+
+function toggleSearch() {
+  const box = document.getElementById("searchBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
     const backToTop = document.querySelector('.back-to-top');
     window.addEventListener('scrol', () =>
     {
-        if (window.acrolly >200)
+     if (window.acrolly >200)
         {
           backToTop.style.display = 'block';
 
        }
-       else
+     else
         {
           backToTop.style.display = 'none';
-       }
-   }
- )
+        }
+     }
+  )
 </script>
 
 
-    </body>
+</body>
 </html>

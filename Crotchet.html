@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script> src="js/bootstrap.bundle.min.js"</script>
     <link rel="stylesheet" href="Crotchet.css">
     <title>Crotchet</title>
     
@@ -40,23 +44,45 @@
 
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-links">
-            
-<img src="images/logo.jpg" alt="My Website Logo" width="150">            
-   <div class="all-links">
-                <ul>
-                    <li><a href="home.html">HOME</a></li>
-                    <li><a href="Shop now.html">SHOP NOW</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
+    <!-- Header Section -->
+  <header class="header">
+    <!-- Replace this -->
+<!-- <div class="logo">MySite</div> -->
 
-                </ul>
-               </div>
-           
+<!-- With this -->
+<div class="logo">
+  <img src="images/logo.jpg" alt="Logo">
+</div>
 
-        </nav>
-    </header>
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact </a>
+    </nav>
+
+    <!-- Right-side Icons -->
+    <div class="icons">
+      <i class="fas fa-search search-icon" onclick="toggleSearch()"></i>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+  <!-- Search Box (hidden by default) -->
+<div id="searchBox" class="search-box">
+  <input type="text" placeholder="Search..." />
+</div>
+
+
+  <!-- Mobile Side Navigation -->
+  <div id="sideNav" class="side-nav">
+    <span class="close-btn" onclick="toggleMenu()">&times;</span>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact </a>
+  </div>
+
     <section class="sec-1">
         <div class="crotchet-title">
             <p>Crotchet <sub>and</sub> Knit <sup>Wear</sup> Designs</p>
@@ -232,6 +258,17 @@ allowfullscreen></iframe>
 <a href="#top" class="back-to-top">Back to Top</a>
 
 <script>
+
+    function toggleMenu() {
+  const nav = document.getElementById("sideNav");
+  nav.style.width = nav.style.width === "250px" ? "0" : "250px";
+
+}
+function toggleSearch() {
+  const box = document.getElementById("searchBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
     const backToTop = document.querySelector('.back-to-top');
     window.addEventListener('scrol', () =>
     {

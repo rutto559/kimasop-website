@@ -3,54 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <title>Product Display</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script> src="js/bootstrap.bundle.min.js"</script>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
       background: #f2f2f2;
     }
-    .header{
-    width: 100%;
     
-    position: fixed;
+header{
+    width: 100%;
     top: 0;
     left: 0;
-    padding: 2rem 9%;
-    display: flex;
-    background-color:rgb(106, 82, 128);
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+    background-color: darkblue;
+    position: fixed;
     border-radius: 5px;
+   
     
 }
-.header img {
-    display: block;
-    margin: 20px auto;
-    margin-left: 1px;
-    max-width: 5%;
-    background-color: red;
-    border-radius: 5px;
-    padding: 10px;
-    height: auto;
-  }
-}
+
 .navbar{
-    font-size: 1.0rem;
-    font-weight: 500;
-    margin-left: 3.5rem;
-    flex: 1;
-    text-align: right;
+    justify-content: space-around;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    
+}
+.navbar img{
+    width: 6%;
+    border-radius: 3px;
 }
 .navbar ul li{
+    margin-bottom: 30px;
     list-style: none;
     display: inline-block;
-    padding: 8px 12px;
-    position: relative;
+    padding: 10px 12px;
+    margin: 17px 10px;
+    
     
 }
 .navbar ul li a{
+    
     color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    
 }
 .navbar ul li::after{
     content: '';
@@ -66,18 +64,41 @@
 .navbar ul li:hover:after{
     width: 100%;
 }
+
 .join-us{
-    position: fixed;
-        
-        right: 30px;
-        background-color: #b5f505;
+    
+    
+        margin-bottom: 30px;
+        padding: 5px  10px;
+        background-color: orange;
         color: #0a0202;
-        padding: 10px 15px;
+        margin: 10px 10px;
         text-decoration: none;
         border-radius: 5px;
         font-size: 14px;
         transition:0.3s;
     }
+    .back-to-top:hover{
+        background-color: #555;
+    }
+    .join-us a{
+        color: rgb(8, 1, 1);
+        list-style: none;
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+    #join-us{
+         width: 2%;
+         border-radius: 50%;
+
+    }
+    #join-us img{
+      width: 100%
+    }
+
     .back-to-top:hover{
         background-color: #555;
     }
@@ -131,30 +152,24 @@
 </head>
 <body>
 
-    <header class="header">
-            <img src="images/logo.jpg" alt="My Website Logo" width="150">
-                    <!--
-            <a href="" class="logo">SICD</a>
-        -->
-                
-                <nav class="navbar">
+    <header >
+            <div class="navbar">
+            <img src="images/logo.jpg" alt="My Website Logo" width="150"> 
+                <nav>
                     <ul>
+                        
+                        
                         <li><a href="home.html">HOME</a></li>
-                        <li><a href="Shop now.html">SHOP NOW</a></li>
                         <li><a href="about.html">ABOUT US</a></li>
                         <li><a href="services.html">SERVICES</a></li>
                         <li><a href="contact.html">CONTACT US</a></li>
                     </ul>
-                    <div class="join-us">
-                        <li><a href="join.html  ">Message us</a></li>
-        
-                    </div>
-        
-        
 
                 </nav>
+               <a class="join-us" href="join.html  ">Message us</a>
+               <button id="join-us"> <img src="images/menu.png"></button>
+                </div>
         </header>
-
   <h1>Our Products</h1>
 
   <div class="products">

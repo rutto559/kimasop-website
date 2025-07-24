@@ -4,27 +4,52 @@
     <a id="top"></a>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <title>Stitches Services</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script> src="js/bootstrap.bundle.min.js"</script>
     <link rel="stylesheet" href="services.css">
 </head>
 <body>
-        <nav class="header">
-            <div class="nav1-link">
-                <img src="images/logo.jpg" alt="My Website Logo" width="150">
-                <div class="nav-link">
-                    <ul>
-                        <a href="home.html"><li>HOME</li></a>
-                        <li><a href="Shop now.html">SHOP NOW</a></li>
-                         <a href="about.html"><li>ABOUT US</li></a>
-                        <a href="Crotchet.html"><li>CROCHET</li></a>
-                        <a href="#Fashion"><li>FASHIONS</li></a>
-                        <a href="#INTERIOR"><li>INTERIOR</li></a> 
-                        <a href="contact.html"><li>CONTACT US</li></a> 
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
+    <!-- Header Section -->
+  <header class="header">
+    <!-- Replace this -->
+<!-- <div class="logo">MySite</div> -->
+
+<!-- With this -->
+<div class="logo">
+  <img src="images/logo.jpg" alt="Logo">
+</div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact </a>
+    </nav>
+
+    <!-- Right-side Icons -->
+    <div class="icons">
+      <i class="fas fa-search search-icon" onclick="toggleSearch()"></i>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+  <!-- Search Box (hidden by default) -->
+<div id="searchBox" class="search-box">
+  <input type="text" placeholder="Search..." />
+</div>
+
+
+  <!-- Mobile Side Navigation -->
+  <div id="sideNav" class="side-nav">
+    <span class="close-btn" onclick="toggleMenu()">&times;</span>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact </a>
+  </div>
 
       <!--HEADER-->
 
@@ -34,23 +59,23 @@
         </div>
        </section>
 
-       <section class="sec-2">
-        <div class="interior-title">
+     <section class="sec-2">
+          <div class="interior-title">
             <h1>INTERIOR AND DESIGN</h1>
-        </div>
+          </div>
         <div class="sec-description">
        
-        <div class="interior-design">
-            <p>Transform your space with our expert interior design services. From conceptualization to execution, we'll
-                work with you to create a functional, beautiful, and sustainable environment that reflects your personality
-                and style.
-            </p>
-        </div>
-        <div class="imag-1">
-            <img src="images/img1.jpg">
-        </div>
-    </div>
-       </section>
+            <div class="interior-design">
+               <p>Transform your space with our expert interior design services. From conceptualization to execution, we'll
+                  work with you to create a functional, beautiful, and sustainable environment that reflects your personality
+                   and style.
+                </p>
+             </div>
+               <div class="imag-1">
+                 <img src="images/img1.jpg">
+               </div>
+       </div>
+     </section>
        <hr>
 
        <section class="sec-3">
@@ -191,6 +216,17 @@
 <a href="#top" class="back-to-top">Back to Top</a>
 
 <script>
+    function toggleMenu() {
+  const nav = document.getElementById("sideNav");
+  nav.style.width = nav.style.width === "250px" ? "0" : "250px";
+
+}
+function toggleSearch() {
+  const box = document.getElementById("searchBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+
     const backToTop = document.querySelector('.back-to-top');
     window.addEventListener('scrol', () =>
     {
