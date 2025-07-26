@@ -140,13 +140,7 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 600px) {
-  .nav-links {
-    display: none;
-  }
-
-  .menu-icon {
-    display: block;
-  }
+ 
 }
 
 
@@ -215,8 +209,9 @@ body {
 .link-1{
     color: white;
     display: inline-block;
-    background-color:red;
+    background-color:darkblue;
     padding: 10px;
+    text-align: center;
     font-size: 15px;
     border-radius: 10px;
     margin-top: 50px;
@@ -1618,36 +1613,67 @@ text-decoration: underline blue solid;
 
 /* Medium devices ( 600px) */
 
-@media (min-width: 600px){
+@media  (min-width: 600px){
     html{
         font-size: 14px;
     }
-    header {
+
+    .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+ header {
         width: 600px;
         
     }
      /* about us*/
 
-    .sec-2{
+ .sec-2{
     width: 600PX;
     align-items: center;
     margin-top: 70px;
+    
 
 
+}
+.container1{
+    width: 600px;
+
+}
+.my-introduction h1{
+    font-size: 20px;
+    text-align: center;
+}
+.my-introduction p{
+    font-size: 14px;
+}
+.link-1{
+    text-decoration: none;
+
+}
+
+.sec-2{
+    width: 600px;
+}
+.about-us h1{
+    font-size: 20px;
 }
 .container2{
 
-    width: 600px;
-    flex-direction: column;
+   width: 600px;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
-   min-height: 100vh;
+   min-height: auto;
 }
 
 .img-2{
-  width: 90%; 
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 70%; 
+  margin-left: 15%;
+  margin-right: 15%;
   margin-top: 70px;
   border-radius: 5px;
 }
@@ -1656,21 +1682,59 @@ text-decoration: underline blue solid;
     width: 100%;
     border-radius: 5px;
 }
-.paragraph-1 {
-    width: 100%;
-
-    
-
-
-    
-}
 .paragraph-1 p{
+    font-size: 14px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.sec-3{
+    width: 600px;
+    height: auto;
+    background-color: white;
+}
+.paragraph-2 h1{
+    font-size: 20px;
+    text-align: center;
+}
+.paragraph-2 p{
+    font-size: 14px;
+    width: 70%;
+     margin-left: 15%;
+    margin-right: 15%;
+
+}
+.container3{
+    width: 600px;
+}
+.crochet{
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
-    
-    
-       
+
+     
+}
+.img-3 img{
+    width: 50%;
+    display: flex;
+
+}
+.paragraph-3a{
+    text-align: center;
+    padding-top: 30px;
+}
+.paragraph-3a a{
+    margin-left: 30%;
+}
+.interior{
+    width: 70%;
+     margin-left: 15%;
+    margin-right: 15%;
+}
+.fashion{
+    width: 70%;
+     margin-left: 15%;
+    margin-right: 15%;
 }
 
 
